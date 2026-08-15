@@ -56,18 +56,25 @@
   .notes ul{list-style:none}
   .notes li{padding-left:13px;position:relative}
   .notes li::before{content:"·";position:absolute;left:2px;font-weight:700}
-  /* 日程模式：大日历 */
-  .cal{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
-  .cal .wd{text-align:center;color:var(--muted);font-size:14px;padding:6px 0;font-weight:600}
-  .cal .cell{background:var(--panel);border:1px solid var(--border);border-radius:14px;min-height:150px;padding:12px 12px;font-size:14px;box-shadow:0 1px 4px rgba(120,95,60,.06)}
-  .cal .cell.off{background:transparent;border-color:transparent;min-height:0;box-shadow:none}
-  .cal .cell.today{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent) inset}
-  .cal .num{font-weight:700;font-size:17px;margin-bottom:8px;color:#3a332a}
-  .cal .item{display:block;border-radius:8px;padding:5px 9px;margin-bottom:6px;font-size:13.5px;line-height:1.45}
-  .cal .item.meet{color:var(--blue);background:rgba(95,127,158,.12)}
-  .cal .item.dinner{color:var(--green);background:rgba(122,154,109,.14)}
-  .cal .item.party{color:var(--green);background:rgba(122,154,109,.14)}
-  .cal .item.flight{color:var(--accent);background:var(--soft)}
+  /* 日程模式：横向日卡片 */
+  .wk{margin:20px 0 10px;font-size:12.5px;color:var(--muted);letter-spacing:1px;display:flex;align-items:center;gap:12px}
+  .wk::after{content:"";flex:1;height:1px;background:var(--border)}
+  .day{display:flex;background:var(--panel);border:1px solid var(--border);border-radius:14px;margin-bottom:10px;box-shadow:0 1px 4px rgba(120,95,60,.07);overflow:hidden}
+  .day.today{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent) inset}
+  .day .dl{flex:0 0 100px;padding:14px 0;text-align:center;border-right:1px dashed var(--border);background:var(--panel2);display:flex;flex-direction:column;justify-content:center}
+  .day .dl .n{font-size:20px;font-weight:700;color:#3a332a;font-family:"Songti SC","Noto Serif SC",Georgia,serif}
+  .day .dl .w{font-size:12px;color:var(--muted);margin-top:3px}
+  .slots{flex:1;display:grid;grid-template-columns:repeat(3,1fr)}
+  .slot{padding:13px 15px;font-size:13.5px;min-width:0}
+  .slot+.slot{border-left:1px dashed var(--border)}
+  .slot .sl{display:block;color:var(--accent);font-weight:600;font-size:12px;margin-bottom:5px}
+  .slot.empty{color:var(--muted)}
+  .slot .tag{margin:0}
+  @media (max-width:640px){
+    .slots{grid-template-columns:1fr}
+    .slot+.slot{border-left:none;border-top:1px dashed var(--border)}
+    .day .dl{flex-basis:82px}
+  }
   .legend{margin:0 0 16px;font-size:13px;color:var(--muted)}
   .legend .tag{margin-right:2px}
   .sec{font-size:15px;font-weight:600;margin:30px 0 12px;padding-left:10px;border-left:3px solid var(--accent);font-family:"Songti SC","Noto Serif SC",Georgia,serif;letter-spacing:1px}
@@ -280,22 +287,90 @@
     <span class="tag party">🏠 家聚会</span>
     <span class="tag flight">✈️ 航班</span>
   </div>
-  <div class="cal">
-    <span class="wd">日</span><span class="wd">一</span><span class="wd">二</span><span class="wd">三</span><span class="wd">四</span><span class="wd">五</span><span class="wd">六</span>
-    <div class="cell today"><div class="num">16</div><span class="item flight">✈️ MU587 赴美</span></div>
-    <div class="cell"><div class="num">17</div></div>
-    <div class="cell"><div class="num">18</div><span class="item flight">✈️ AA149 赴湾区</span></div>
-    <div class="cell"><div class="num">19</div><span class="item party">🏠 WADE 家聚会（晚）</span></div>
-    <div class="cell"><div class="num">20</div>
-      <span class="item meet">💼 Decagon 上午 · SF</span>
-      <span class="item meet">💼 Cresta 下午 · SF</span>
-      <span class="item dinner">🍽 Cresta 晚餐</span>
+
+  <div class="day today">
+    <div class="dl"><div class="n">8/16</div><div class="w">周日</div></div>
+    <div class="slots">
+      <div class="slot"><span class="sl">上午</span><span class="tag flight">✈️ MU587 赴美</span></div>
+      <div class="slot"><span class="sl">下午</span>抵 JFK，入纽约市区</div>
+      <div class="slot"><span class="sl">晚上</span>Hudson Yards / Times Square</div>
     </div>
-    <div class="cell"><div class="num">21</div><span class="item party">🏠 Benny 家聚会（晚）</span></div>
-    <div class="cell"><div class="num">22</div></div>
-    <div class="cell"><div class="num">23</div></div>
-    <div class="cell"><div class="num">24</div><span class="item flight">✈️ 返沪</span></div>
-    <div class="cell off"></div><div class="cell off"></div><div class="cell off"></div><div class="cell off"></div><div class="cell off"></div>
+  </div>
+
+  <div class="wk">8/17 – 8/23</div>
+
+  <div class="day">
+    <div class="dl"><div class="n">8/17</div><div class="w">周一</div></div>
+    <div class="slots">
+      <div class="slot"><span class="sl">上午</span>Bryant Park / 第五大道</div>
+      <div class="slot"><span class="sl">下午</span>石溪访校</div>
+      <div class="slot"><span class="sl">晚上</span>返 JFK</div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="dl"><div class="n">8/18</div><div class="w">周二</div></div>
+    <div class="slots">
+      <div class="slot"><span class="sl">上午</span><span class="tag flight">✈️ AA149 赴湾区</span></div>
+      <div class="slot"><span class="sl">下午</span>CH 接机</div>
+      <div class="slot empty"><span class="sl">晚上</span>空</div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="dl"><div class="n">8/19</div><div class="w">周三</div></div>
+    <div class="slots">
+      <div class="slot empty"><span class="sl">上午</span>空</div>
+      <div class="slot empty"><span class="sl">下午</span>空</div>
+      <div class="slot"><span class="sl">晚上</span><span class="tag party">🏠 WADE 家聚会</span> 南湾</div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="dl"><div class="n">8/20</div><div class="w">周四</div></div>
+    <div class="slots">
+      <div class="slot"><span class="sl">上午</span><span class="tag meet">💼 Decagon</span> SF</div>
+      <div class="slot"><span class="sl">下午</span><span class="tag meet">💼 Cresta</span> SF</div>
+      <div class="slot"><span class="sl">晚上</span><span class="tag dinner">🍽 Cresta 晚餐</span></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="dl"><div class="n">8/21</div><div class="w">周五</div></div>
+    <div class="slots">
+      <div class="slot empty"><span class="sl">上午</span>空</div>
+      <div class="slot empty"><span class="sl">下午</span>空</div>
+      <div class="slot"><span class="sl">晚上</span><span class="tag party">🏠 Benny 家聚会</span> 南湾</div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="dl"><div class="n">8/22</div><div class="w">周六</div></div>
+    <div class="slots">
+      <div class="slot empty"><span class="sl">上午</span>空</div>
+      <div class="slot empty"><span class="sl">下午</span>空</div>
+      <div class="slot empty"><span class="sl">晚上</span>空</div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="dl"><div class="n">8/23</div><div class="w">周日</div></div>
+    <div class="slots">
+      <div class="slot empty"><span class="sl">上午</span>空</div>
+      <div class="slot empty"><span class="sl">下午</span>空</div>
+      <div class="slot empty"><span class="sl">晚上</span>空</div>
+    </div>
+  </div>
+
+  <div class="wk">8/24 –</div>
+
+  <div class="day">
+    <div class="dl"><div class="n">8/24</div><div class="w">周一</div></div>
+    <div class="slots">
+      <div class="slot"><span class="sl">上午</span><span class="tag flight">✈️ SFO → PVG</span> 8/25 抵达</div>
+      <div class="slot empty"><span class="sl">下午</span>空</div>
+      <div class="slot empty"><span class="sl">晚上</span>空</div>
+    </div>
   </div>
 </div>
 
