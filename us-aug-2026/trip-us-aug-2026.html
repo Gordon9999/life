@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 年 8 月美国行程</title>
+<style>
+  :root {
+    --bg:#f7f2e9; --panel:#fffdf8; --panel2:#f3ecdf; --border:#e6dccb;
+    --text:#464036; --muted:#9b8f7d; --accent:#b0764f; --soft:#f0e2d5;
+    --green:#7a9a6d; --amber:#c08a3e; --blue:#5f7f9e;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.6;padding:32px 20px;max-width:860px;margin:0 auto;font-size:14px}
+  header{margin-bottom:20px}
+  h1{font-size:22px;font-weight:600;font-family:"Songti SC","Noto Serif SC",Georgia,serif;color:#3a332a}
+  .meta{color:var(--muted);font-size:13px;margin-top:4px}
+  .meta a{color:var(--accent);text-decoration:none}
+  .mode{display:inline-flex;background:var(--panel);border:1px solid var(--border);border-radius:999px;overflow:hidden;margin-bottom:20px}
+  .mode button{background:none;border:none;color:var(--muted);padding:7px 20px;font-size:14px;cursor:pointer;font-family:inherit}
+  .mode button.active{background:var(--soft);color:var(--accent);font-weight:600}
+  .hide{display:none}
+  /* 表格 */
+  table{width:100%;border-collapse:collapse;background:var(--panel);border-radius:12px;overflow:hidden;box-shadow:0 1px 4px rgba(120,95,60,.07)}
+  th{color:var(--muted);font-weight:500;text-align:left;padding:8px 12px;border-bottom:1px solid var(--border);font-size:12.5px}
+  td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  .dm{font-weight:600}
+  .dw{color:var(--muted);font-size:12px}
+  .seg{display:block}
+  .st{display:inline-block;min-width:32px;color:var(--accent);font-size:12px;font-weight:600;margin-right:6px}
+  /* 徽章 */
+  .tag{display:inline-block;font-size:12px;font-weight:600;border-radius:6px;padding:0 7px;margin:0 3px}
+  .flight{color:var(--accent);background:var(--soft)}
+  .party{color:var(--green);background:rgba(122,154,109,.14)}
+  .meet{color:var(--blue);background:rgba(95,127,158,.12)}
+  .status{font-size:12px;padding:1px 8px;border-radius:999px;margin-left:6px}
+  .s-ok{background:rgba(122,154,109,.14);color:var(--green)}
+  .s-tbd{background:rgba(192,138,62,.14);color:var(--amber)}
+  /* 详细模式 */
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:14px;margin-bottom:14px;overflow:hidden;box-shadow:0 1px 4px rgba(120,95,60,.07)}
+  .ch{display:flex;align-items:baseline;gap:10px;padding:14px 18px 10px;border-bottom:1px dashed var(--border);flex-wrap:wrap}
+  .cd{font-size:16px;font-weight:600;color:var(--accent)}
+  .cw{font-size:12.5px;color:var(--muted)}
+  .ct{font-size:12.5px;color:var(--muted);margin-left:auto}
+  .cb{padding:12px 18px 14px}
+  .hotel{font-size:13px;color:var(--muted);padding:7px 11px;background:var(--panel2);border-radius:8px;margin-bottom:10px}
+  .hotel b{color:var(--text)}
+  .tl{list-style:none}
+  .tl li{position:relative;padding:0 0 12px 18px}
+  .tl li::before{content:"";position:absolute;left:2px;top:9px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+  .tl li:not(:last-child)::after{content:"";position:absolute;left:4.5px;top:18px;bottom:0;width:1px;background:var(--border)}
+  .t{color:var(--accent);font-weight:600;font-size:12.5px;margin-right:8px}
+  .notes{margin-top:10px;padding:9px 13px;background:rgba(192,138,62,.08);border:1px dashed rgba(192,138,62,.35);border-radius:8px;font-size:13px;color:var(--amber)}
+  .notes b{margin-right:6px}
+  .notes ul{list-style:none}
+  .notes li{padding-left:13px;position:relative}
+  .notes li::before{content:"·";position:absolute;left:2px;font-weight:700}
+  /* 日程模式：日历 + 大卡片 */
+  .cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+  .cal .wd{text-align:center;color:var(--muted);font-size:12px;padding:4px 0}
+  .cal .cell{background:var(--panel);border:1px solid var(--border);border-radius:10px;min-height:86px;padding:6px 8px;font-size:12.5px}
+  .cal .cell.off{background:transparent;border-color:transparent;min-height:0}
+  .cal .cell.today{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+  .cal .num{font-weight:600;font-size:13px;margin-bottom:4px}
+  .cal .item{display:block;border-radius:6px;padding:1px 6px;margin-bottom:3px;font-size:12px;background:var(--panel2)}
+  .cal .item.meet{color:var(--blue);background:rgba(95,127,158,.12)}
+  .cal .item.dinner{color:var(--green);background:rgba(122,154,109,.14)}
+  .cal .item.party{color:var(--green);background:rgba(122,154,109,.14)}
+  .cal .item.flight{color:var(--accent);background:var(--soft)}
+  .legend{margin:14px 0 18px;font-size:12.5px;color:var(--muted)}
+  .legend .tag{margin-right:2px}
+  .ev{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:20px 22px;margin-bottom:16px;box-shadow:0 2px 8px rgba(120,95,60,.08);display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+  .ev .ico{font-size:30px;line-height:1;flex:0 0 auto}
+  .ev .main{flex:1 1 200px}
+  .ev .ev-date{font-size:13px;font-weight:600;color:var(--accent);margin-bottom:3px}
+  .ev .ev-title{font-size:18px;font-weight:600;font-family:"Songti SC","Noto Serif SC",Georgia,serif;color:#3a332a}
+  .ev .ev-sub{font-size:13px;color:var(--muted);margin-top:3px}
+  .ev .st2{margin-left:auto;flex:0 0 auto}
+  .sec{font-size:15px;font-weight:600;margin:30px 0 12px;padding-left:10px;border-left:3px solid var(--accent);font-family:"Songti SC","Noto Serif SC",Georgia,serif;letter-spacing:1px}
+  .todo{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:14px 18px;box-shadow:0 1px 4px rgba(120,95,60,.07)}
+  .todo li{margin:0 0 6px 18px}
+  .todo li:last-child{margin-bottom:0}
+  footer{color:var(--muted);font-size:12px;margin-top:30px;text-align:center}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>2026 年 8 月美国行程</h1>
+  <div class="meta">8/16–8/24 · 9 天 8 晚 · 上海 → 纽约 → 湾区 → 上海 · <a href="orders-us-aug-2026.html">订单</a> · <a href="weather-luggage-us-aug-2026.html">天气行李</a></div>
+</header>
+
+<div class="mode">
+  <button id="b1" class="active" onclick="s(1)">简单</button>
+  <button id="b2" onclick="s(2)">详细</button>
+  <button id="b3" onclick="s(3)">日程</button>
+</div>
+
+<!-- 简单 -->
+<div id="m1">
+  <table>
+    <tbody>
+      <tr><td class="dm">8/16 <span class="dw">日</span></td>
+          <td><span class="seg"><span class="st">上午</span><span class="tag flight">✈️ MU587</span> 上海 11:30 起飞</span>
+              <span class="seg"><span class="st">下午</span>14:25 抵 JFK，CY 接机，入往纽约市区</span>
+              <span class="seg"><span class="st">晚上</span>Hudson Yards / High Line / Times Square</span></td>
+          <td>Arlo Midtown ✅</td></tr>
+      <tr><td class="dm">8/17 <span class="dw">一</span></td>
+          <td><span class="seg"><span class="st">上午</span>Bryant Park / 图书馆 / 第五大道</span>
+              <span class="seg"><span class="st">中午</span>回酒店取行李，与 CY 午餐</span>
+              <span class="seg"><span class="st">下午</span>13:30 赴石溪访校</span>
+              <span class="seg"><span class="st">晚上</span>返 JFK</span></td>
+          <td>JFK 附近 待确认</td></tr>
+      <tr><td class="dm">8/18 <span class="dw">二</span></td>
+          <td><span class="seg"><span class="st">上午</span><span class="tag flight">✈️ AA149</span> JFK 11:00 → SFO 14:25</span>
+              <span class="seg"><span class="st">下午</span>CH 接机</span></td>
+          <td>CH 家 ✅</td></tr>
+      <tr><td class="dm">8/19 <span class="dw">三</span></td>
+          <td><span class="seg"><span class="st">上午</span>空</span>
+              <span class="seg"><span class="st">下午</span>空</span>
+              <span class="seg"><span class="st">晚上</span><span class="tag party">🏠 WADE 家聚会</span> 南湾</span></td>
+          <td>湾区酒店</td></tr>
+      <tr><td class="dm">8/20 <span class="dw">四</span></td>
+          <td><span class="seg"><span class="st">上午</span><span class="tag meet">💼 Decagon</span> SF 市区</span>
+              <span class="seg"><span class="st">下午</span><span class="tag meet">💼 Cresta</span> SF 市区</span>
+              <span class="seg"><span class="st">晚上</span><span class="tag party">🍽 Cresta 晚餐</span></span></td>
+          <td>湾区酒店</td></tr>
+      <tr><td class="dm">8/21 <span class="dw">五</span></td>
+          <td><span class="seg"><span class="st">上午</span>空</span>
+              <span class="seg"><span class="st">下午</span>空</span>
+              <span class="seg"><span class="st">晚上</span><span class="tag party">🏠 Benny 家聚会</span> 南湾</span></td>
+          <td>湾区酒店</td></tr>
+      <tr><td class="dm">8/22 <span class="dw">六</span></td>
+          <td><span class="seg"><span class="st">上午</span>空</span><span class="seg"><span class="st">下午</span>空</span><span class="seg"><span class="st">晚上</span>空</span></td>
+          <td>湾区酒店</td></tr>
+      <tr><td class="dm">8/23 <span class="dw">日</span></td>
+          <td><span class="seg"><span class="st">上午</span>空</span><span class="seg"><span class="st">下午</span>空</span><span class="seg"><span class="st">晚上</span>空</span></td>
+          <td>湾区酒店</td></tr>
+      <tr><td class="dm">8/24 <span class="dw">一</span></td>
+          <td><span class="seg"><span class="st">上午</span><span class="tag flight">✈️ SFO → PVG</span> 8/25 抵达</span></td>
+          <td>—</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 详细 -->
+<div id="m2" class="hide">
+
+  <div class="card">
+    <div class="ch"><span class="cd">8/16</span><span class="cw">周日</span><span class="ct">上海 → JFK → 纽约</span></div>
+    <div class="cb">
+      <div class="hotel">🏨 <b>Arlo Midtown</b>（351 W 38th St）· 2 双人床 · 8/17 退房 · 8/17 含 2 早餐 <span class="status s-ok">已确认</span></div>
+      <ul class="tl">
+        <li><span class="t">上午</span>11:30 <span class="tag flight">✈️ MU587</span> 浦东 T1 → JFK T1，777-300 约 15h，有 WiFi</li>
+        <li><span class="t">下午</span>14:25 抵 JFK T1；CY 接机 <span class="status s-ok">已确认</span>；入境、取行李，入纽约市区</li>
+        <li><span class="t">晚上</span>与 CY：Hudson Yards → High Line → Times Square</li>
+      </ul>
+      <div class="notes"><b>注意</b><ul>
+        <li>MU587 值机柜台 H/J/K/L；近期常晚点 20–60 分钟，抵达留弹性</li>
+        <li>长途飞行补水、机上休息倒时差</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><span class="cd">8/17</span><span class="cw">周一</span><span class="ct">纽约 → 石溪 → JFK</span></div>
+    <div class="cb">
+      <div class="hotel">🏨 JFK 附近住宿 <span class="status s-tbd">待确认</span></div>
+      <ul class="tl">
+        <li><span class="t">上午</span>08:30–11:30 CY 陪同：Bryant Park → 公共图书馆 → 第五大道</li>
+        <li><span class="t">中午</span>回酒店取行李，与 CY 午餐（今日含早餐）</li>
+        <li><span class="t">下午</span>约 13:30 出发赴石溪 <span class="status s-ok">已确认</span>；石溪访校 <span class="status s-tbd">细节待确认</span></li>
+        <li><span class="t">晚上</span>从石溪返 JFK</li>
+      </ul>
+      <div class="notes"><b>注意</b><ul>
+        <li>JFK 附近酒店如未订，出发前锁定；石溪安排与 CY 提前对</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><span class="cd">8/18</span><span class="cw">周二</span><span class="ct">JFK → SFO · CH 接机</span></div>
+    <div class="cb">
+      <div class="hotel">🏨 <b>住 CH 家</b> West San Jose, 1141 S Genevieve Ln <span class="status s-ok">已确认</span></div>
+      <ul class="tl">
+        <li><span class="t">上午</span>11:00 <span class="tag flight">✈️ AA149</span> JFK T8 → SFO T1，14:25 抵达 <span class="status s-ok">已确定</span></li>
+        <li><span class="t">下午</span>CH 在 SFO 接机 <span class="status s-ok">已确认</span></li>
+      </ul>
+      <div class="notes"><b>注意</b><ul>
+        <li>9:00 前到 JFK T8（提前 2 小时）</li>
+        <li>湾区酒店 5 晚（8/19–8/23）今天定下来；明晚 WADE 聚会细节跟进</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><span class="cd">8/19</span><span class="cw">周三</span><span class="ct">南湾 · WADE 家聚会</span></div>
+    <div class="cb">
+      <div class="hotel">🏨 湾区同一酒店 <span class="status s-tbd">区域待定</span></div>
+      <ul class="tl">
+        <li><span class="t">上午</span>空</li>
+        <li><span class="t">下午</span>空</li>
+        <li><span class="t">晚上</span><span class="tag party">🏠 WADE 家聚会</span> 南湾 <span class="status s-tbd">时间 / 地址待确认</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><span class="cd">8/20</span><span class="cw">周四</span><span class="ct">Decagon + Cresta + 晚餐</span></div>
+    <div class="cb">
+      <div class="hotel">🏨 湾区同一酒店</div>
+      <ul class="tl">
+        <li><span class="t">上午</span><span class="tag meet">💼 Decagon</span> SF 市区 <span class="status s-tbd">时间 / 地址待确认</span></li>
+        <li><span class="t">下午</span><span class="tag meet">💼 Cresta</span> SF 市区 <span class="status s-tbd">时间 / 地址待确认</span></li>
+        <li><span class="t">晚上</span><span class="tag party">🍽 与 Cresta 团队晚餐</span></li>
+      </ul>
+      <div class="notes"><b>注意</b><ul>
+        <li>Decagon / Cresta / 晚餐全天在 SF 市区，三段之间留足转场时间；市区优先网约车</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><span class="cd">8/21</span><span class="cw">周五</span><span class="ct">南湾 · Benny 家聚会</span></div>
+    <div class="cb">
+      <div class="hotel">🏨 湾区同一酒店</div>
+      <ul class="tl">
+        <li><span class="t">上午</span>空</li>
+        <li><span class="t">下午</span>空</li>
+        <li><span class="t">晚上</span><span class="tag party">🏠 Benny 家聚会</span> 南湾 <span class="status s-tbd">时间 / 地址待确认</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><span class="cd">8/22</span><span class="cw">周六</span></div>
+    <div class="cb">
+      <div class="hotel">🏨 湾区同一酒店</div>
+      <ul class="tl">
+        <li><span class="t">上午</span>空</li><li><span class="t">下午</span>空</li><li><span class="t">晚上</span>空</li>
+      </ul>
+      <div class="notes"><b>注意</b><ul><li>返程 SFO → PVG 如未出票，今天确认航班号和起飞时间</li></ul></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><span class="cd">8/23</span><span class="cw">周日</span></div>
+    <div class="cb">
+      <div class="hotel">🏨 湾区同一酒店</div>
+      <ul class="tl">
+        <li><span class="t">上午</span>空</li><li><span class="t">下午</span>空</li><li><span class="t">晚上</span>空</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><span class="cd">8/24</span><span class="cw">周一</span><span class="ct">SFO → 上海</span></div>
+    <div class="cb">
+      <ul class="tl">
+        <li><span class="t">上午</span><span class="tag flight">✈️ SFO → PVG</span> 直飞优先（东航 / 联航），8/25 周二抵达</li>
+      </ul>
+      <div class="notes"><b>注意</b><ul>
+        <li>提前约 3 小时到 SFO；备选首尔 / 东京 / 台北 / 香港中转</li>
+        <li>出发前查护照、值机、行李超重、遗留物品</li>
+      </ul></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- 日程 -->
+<div id="m3" class="hide">
+  <div class="legend">
+    <span class="tag meet">💼 拜访</span>
+    <span class="tag dinner">🍽 聚餐</span>
+    <span class="tag party">🏠 家聚会</span>
+    <span class="tag flight">✈️ 航班</span>
+  </div>
+  <div class="cal">
+    <span class="wd">日</span><span class="wd">一</span><span class="wd">二</span><span class="wd">三</span><span class="wd">四</span><span class="wd">五</span><span class="wd">六</span>
+    <div class="cell today"><div class="num">16</div><span class="item flight">✈️ MU587 赴美</span></div>
+    <div class="cell"><div class="num">17</div></div>
+    <div class="cell"><div class="num">18</div><span class="item flight">✈️ AA149 赴湾区</span></div>
+    <div class="cell"><div class="num">19</div><span class="item party">🏠 WADE 家聚会（晚）</span></div>
+    <div class="cell"><div class="num">20</div>
+      <span class="item meet">💼 Decagon 上午 · SF</span>
+      <span class="item meet">💼 Cresta 下午 · SF</span>
+      <span class="item dinner">🍽 Cresta 晚餐</span>
+    </div>
+    <div class="cell"><div class="num">21</div><span class="item party">🏠 Benny 家聚会（晚）</span></div>
+    <div class="cell"><div class="num">22</div></div>
+    <div class="cell"><div class="num">23</div></div>
+    <div class="cell"><div class="num">24</div><span class="item flight">✈️ 返沪</span></div>
+    <div class="cell off"></div><div class="cell off"></div><div class="cell off"></div><div class="cell off"></div><div class="cell off"></div>
+  </div>
+
+  <div class="sec">日程安排</div>
+
+  <div class="ev">
+    <div class="ico">🏠</div>
+    <div class="main">
+      <div class="ev-date">8/19 周三 · 晚上</div>
+      <div class="ev-title">WADE 家聚会</div>
+      <div class="ev-sub">南湾 · 地址待确认</div>
+    </div>
+    <span class="status s-tbd st2">待确认</span>
+  </div>
+
+  <div class="ev">
+    <div class="ico">💼</div>
+    <div class="main">
+      <div class="ev-date">8/20 周四 · 上午</div>
+      <div class="ev-title">Decagon</div>
+      <div class="ev-sub">SF 市区 · 时间地址待确认</div>
+    </div>
+    <span class="status s-tbd st2">待确认</span>
+  </div>
+
+  <div class="ev">
+    <div class="ico">💼</div>
+    <div class="main">
+      <div class="ev-date">8/20 周四 · 下午</div>
+      <div class="ev-title">Cresta</div>
+      <div class="ev-sub">SF 市区 · 时间地址待确认</div>
+    </div>
+    <span class="status s-tbd st2">待确认</span>
+  </div>
+
+  <div class="ev">
+    <div class="ico">🍽</div>
+    <div class="main">
+      <div class="ev-date">8/20 周四 · 晚上</div>
+      <div class="ev-title">与 Cresta 团队晚餐</div>
+      <div class="ev-sub">餐厅待确认</div>
+    </div>
+    <span class="status s-tbd st2">待确认</span>
+  </div>
+
+  <div class="ev">
+    <div class="ico">🏠</div>
+    <div class="main">
+      <div class="ev-date">8/21 周五 · 晚上</div>
+      <div class="ev-title">Benny 家聚会</div>
+      <div class="ev-sub">南湾 · 地址待确认</div>
+    </div>
+    <span class="status s-tbd st2">待确认</span>
+  </div>
+
+  <div class="ev">
+    <div class="ico">💼</div>
+    <div class="main">
+      <div class="ev-date">待排期</div>
+      <div class="ev-title">SIHUI</div>
+      <div class="ev-sub">SF 市区 · 暂未排期</div>
+    </div>
+    <span class="status s-tbd st2">暂未排期</span>
+  </div>
+</div>
+
+<div class="sec">待确认</div>
+<div class="todo">
+  <ol>
+    <li>8/17 石溪具体安排及当晚 JFK 附近酒店</li>
+    <li>WADE（8/19 晚）、Benny（8/21 晚）聚会的时间与地址</li>
+    <li>Decagon（8/20 上午）、Cresta（8/20 下午 + 晚餐）的时间与地址；SIHUI 暂未排期</li>
+    <li>湾区酒店 5 晚；8/24 SFO → PVG 航班</li>
+  </ol>
+</div>
+
+<footer>2026-08 美国行程 · 9 天 8 晚</footer>
+
+<script>
+function s(n){
+  for(var i=1;i<=3;i++){
+    document.getElementById('m'+i).classList.toggle('hide',i!==n);
+    document.getElementById('b'+i).classList.toggle('active',i===n);
+  }
+}
+</script>
+</body>
+</html>
