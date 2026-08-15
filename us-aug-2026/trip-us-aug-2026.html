@@ -56,27 +56,20 @@
   .notes ul{list-style:none}
   .notes li{padding-left:13px;position:relative}
   .notes li::before{content:"·";position:absolute;left:2px;font-weight:700}
-  /* 日程模式：日历 + 大卡片 */
-  .cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
-  .cal .wd{text-align:center;color:var(--muted);font-size:12px;padding:4px 0}
-  .cal .cell{background:var(--panel);border:1px solid var(--border);border-radius:10px;min-height:86px;padding:6px 8px;font-size:12.5px}
-  .cal .cell.off{background:transparent;border-color:transparent;min-height:0}
-  .cal .cell.today{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
-  .cal .num{font-weight:600;font-size:13px;margin-bottom:4px}
-  .cal .item{display:block;border-radius:6px;padding:1px 6px;margin-bottom:3px;font-size:12px;background:var(--panel2)}
+  /* 日程模式：大日历 */
+  .cal{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+  .cal .wd{text-align:center;color:var(--muted);font-size:14px;padding:6px 0;font-weight:600}
+  .cal .cell{background:var(--panel);border:1px solid var(--border);border-radius:14px;min-height:150px;padding:12px 12px;font-size:14px;box-shadow:0 1px 4px rgba(120,95,60,.06)}
+  .cal .cell.off{background:transparent;border-color:transparent;min-height:0;box-shadow:none}
+  .cal .cell.today{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent) inset}
+  .cal .num{font-weight:700;font-size:17px;margin-bottom:8px;color:#3a332a}
+  .cal .item{display:block;border-radius:8px;padding:5px 9px;margin-bottom:6px;font-size:13.5px;line-height:1.45}
   .cal .item.meet{color:var(--blue);background:rgba(95,127,158,.12)}
   .cal .item.dinner{color:var(--green);background:rgba(122,154,109,.14)}
   .cal .item.party{color:var(--green);background:rgba(122,154,109,.14)}
   .cal .item.flight{color:var(--accent);background:var(--soft)}
-  .legend{margin:14px 0 18px;font-size:12.5px;color:var(--muted)}
+  .legend{margin:0 0 16px;font-size:13px;color:var(--muted)}
   .legend .tag{margin-right:2px}
-  .ev{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:20px 22px;margin-bottom:16px;box-shadow:0 2px 8px rgba(120,95,60,.08);display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-  .ev .ico{font-size:30px;line-height:1;flex:0 0 auto}
-  .ev .main{flex:1 1 200px}
-  .ev .ev-date{font-size:13px;font-weight:600;color:var(--accent);margin-bottom:3px}
-  .ev .ev-title{font-size:18px;font-weight:600;font-family:"Songti SC","Noto Serif SC",Georgia,serif;color:#3a332a}
-  .ev .ev-sub{font-size:13px;color:var(--muted);margin-top:3px}
-  .ev .st2{margin-left:auto;flex:0 0 auto}
   .sec{font-size:15px;font-weight:600;margin:30px 0 12px;padding-left:10px;border-left:3px solid var(--accent);font-family:"Songti SC","Noto Serif SC",Georgia,serif;letter-spacing:1px}
   .todo{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:14px 18px;box-shadow:0 1px 4px rgba(120,95,60,.07)}
   .todo li{margin:0 0 6px 18px}
@@ -111,7 +104,7 @@
               <span class="seg"><span class="st">中午</span>回酒店取行李，与 CY 午餐</span>
               <span class="seg"><span class="st">下午</span>13:30 赴石溪访校</span>
               <span class="seg"><span class="st">晚上</span>返 JFK</span></td>
-          <td>JFK 附近 待确认</td></tr>
+          <td>JFK 附近</td></tr>
       <tr><td class="dm">8/18 <span class="dw">二</span></td>
           <td><span class="seg"><span class="st">上午</span><span class="tag flight">✈️ AA149</span> JFK 11:00 → SFO 14:25</span>
               <span class="seg"><span class="st">下午</span>CH 接机</span></td>
@@ -267,6 +260,16 @@
     </div>
   </div>
 
+  <div class="sec">待确认</div>
+  <div class="todo">
+    <ol>
+      <li>8/17 石溪具体安排及当晚 JFK 附近酒店</li>
+      <li>WADE（8/19 晚）、Benny（8/21 晚）聚会的时间与地址</li>
+      <li>Decagon（8/20 上午）、Cresta（8/20 下午 + 晚餐）的时间与地址；SIHUI 暂未排期</li>
+      <li>湾区酒店 5 晚；8/24 SFO → PVG 航班</li>
+    </ol>
+  </div>
+
 </div>
 
 <!-- 日程 -->
@@ -294,78 +297,6 @@
     <div class="cell"><div class="num">24</div><span class="item flight">✈️ 返沪</span></div>
     <div class="cell off"></div><div class="cell off"></div><div class="cell off"></div><div class="cell off"></div><div class="cell off"></div>
   </div>
-
-  <div class="sec">日程安排</div>
-
-  <div class="ev">
-    <div class="ico">🏠</div>
-    <div class="main">
-      <div class="ev-date">8/19 周三 · 晚上</div>
-      <div class="ev-title">WADE 家聚会</div>
-      <div class="ev-sub">南湾 · 地址待确认</div>
-    </div>
-    <span class="status s-tbd st2">待确认</span>
-  </div>
-
-  <div class="ev">
-    <div class="ico">💼</div>
-    <div class="main">
-      <div class="ev-date">8/20 周四 · 上午</div>
-      <div class="ev-title">Decagon</div>
-      <div class="ev-sub">SF 市区 · 时间地址待确认</div>
-    </div>
-    <span class="status s-tbd st2">待确认</span>
-  </div>
-
-  <div class="ev">
-    <div class="ico">💼</div>
-    <div class="main">
-      <div class="ev-date">8/20 周四 · 下午</div>
-      <div class="ev-title">Cresta</div>
-      <div class="ev-sub">SF 市区 · 时间地址待确认</div>
-    </div>
-    <span class="status s-tbd st2">待确认</span>
-  </div>
-
-  <div class="ev">
-    <div class="ico">🍽</div>
-    <div class="main">
-      <div class="ev-date">8/20 周四 · 晚上</div>
-      <div class="ev-title">与 Cresta 团队晚餐</div>
-      <div class="ev-sub">餐厅待确认</div>
-    </div>
-    <span class="status s-tbd st2">待确认</span>
-  </div>
-
-  <div class="ev">
-    <div class="ico">🏠</div>
-    <div class="main">
-      <div class="ev-date">8/21 周五 · 晚上</div>
-      <div class="ev-title">Benny 家聚会</div>
-      <div class="ev-sub">南湾 · 地址待确认</div>
-    </div>
-    <span class="status s-tbd st2">待确认</span>
-  </div>
-
-  <div class="ev">
-    <div class="ico">💼</div>
-    <div class="main">
-      <div class="ev-date">待排期</div>
-      <div class="ev-title">SIHUI</div>
-      <div class="ev-sub">SF 市区 · 暂未排期</div>
-    </div>
-    <span class="status s-tbd st2">暂未排期</span>
-  </div>
-</div>
-
-<div class="sec">待确认</div>
-<div class="todo">
-  <ol>
-    <li>8/17 石溪具体安排及当晚 JFK 附近酒店</li>
-    <li>WADE（8/19 晚）、Benny（8/21 晚）聚会的时间与地址</li>
-    <li>Decagon（8/20 上午）、Cresta（8/20 下午 + 晚餐）的时间与地址；SIHUI 暂未排期</li>
-    <li>湾区酒店 5 晚；8/24 SFO → PVG 航班</li>
-  </ol>
 </div>
 
 <footer>2026-08 美国行程 · 9 天 8 晚</footer>
