@@ -20,15 +20,6 @@
   .mode button{background:none;border:none;color:var(--muted);padding:7px 20px;font-size:14px;cursor:pointer;font-family:inherit}
   .mode button.active{background:var(--soft);color:var(--accent);font-weight:600}
   .hide{display:none}
-  /* 表格 */
-  table{width:100%;border-collapse:collapse;background:var(--panel);border-radius:12px;overflow:hidden;box-shadow:0 1px 4px rgba(120,95,60,.07)}
-  th{color:var(--muted);font-weight:500;text-align:left;padding:8px 12px;border-bottom:1px solid var(--border);font-size:12.5px}
-  td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top}
-  tr:last-child td{border-bottom:none}
-  .dm{font-weight:600}
-  .dw{color:var(--muted);font-size:12px}
-  .seg{display:block}
-  .st{display:inline-block;min-width:32px;color:var(--accent);font-size:12px;font-weight:600;margin-right:6px}
   /* 徽章 */
   .tag{display:inline-block;font-size:12px;font-weight:600;border-radius:6px;padding:0 7px;margin:0 3px}
   .flight{color:var(--accent);background:var(--soft)}
@@ -61,13 +52,17 @@
   .wk::after{content:"";flex:1;height:1px;background:var(--border)}
   .day{display:flex;background:var(--panel);border:1px solid var(--border);border-radius:14px;margin-bottom:10px;box-shadow:0 1px 4px rgba(120,95,60,.07);overflow:hidden}
   .day.today{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent) inset}
-  .day .dl{flex:0 0 100px;padding:14px 0;text-align:center;border-right:1px dashed var(--border);background:var(--panel2);display:flex;flex-direction:column;justify-content:center}
+  .day .dl{flex:0 0 128px;padding:12px 8px;text-align:center;border-right:1px dashed var(--border);background:var(--panel2);display:flex;flex-direction:column;justify-content:center}
   .day .dl .n{font-size:20px;font-weight:700;color:#3a332a;font-family:"Songti SC","Noto Serif SC",Georgia,serif}
   .day .dl .w{font-size:12px;color:var(--muted);margin-top:3px}
+  .day .dl .h{font-size:11.5px;color:var(--muted);margin-top:7px;line-height:1.45}
+  .day .dl .h .ok{color:var(--green);font-weight:600}
   .slots{flex:1;display:grid;grid-template-columns:repeat(3,1fr)}
   .slot{padding:13px 15px;font-size:13.5px;min-width:0}
   .slot+.slot{border-left:1px dashed var(--border)}
   .slot .sl{display:block;color:var(--accent);font-weight:600;font-size:12px;margin-bottom:5px}
+  .slot .noon{display:block;color:var(--muted);font-size:12.5px;margin-top:5px}
+  .slot .noon b{color:var(--accent);font-weight:600;margin-right:4px}
   .slot.empty{color:var(--muted)}
   .slot .tag{margin:0}
   @media (max-width:640px){
@@ -94,54 +89,102 @@
 <div class="mode">
   <button id="b1" class="active" onclick="s(1)">简单</button>
   <button id="b2" onclick="s(2)">详细</button>
-  <button id="b3" onclick="s(3)">日程</button>
 </div>
 
-<!-- 简单 -->
+<!-- 简单（日卡片） -->
 <div id="m1">
-  <table>
-    <tbody>
-      <tr><td class="dm">8/16 <span class="dw">日</span></td>
-          <td><span class="seg"><span class="st">上午</span><span class="tag flight">✈️ MU587</span> 上海 11:30 起飞</span>
-              <span class="seg"><span class="st">下午</span>14:25 抵 JFK，CY 接机，入往纽约市区</span>
-              <span class="seg"><span class="st">晚上</span>Hudson Yards / High Line / Times Square</span></td>
-          <td>Arlo Midtown ✅</td></tr>
-      <tr><td class="dm">8/17 <span class="dw">一</span></td>
-          <td><span class="seg"><span class="st">上午</span>Bryant Park / 图书馆 / 第五大道</span>
-              <span class="seg"><span class="st">中午</span>回酒店取行李，与 CY 午餐</span>
-              <span class="seg"><span class="st">下午</span>13:30 赴石溪访校</span>
-              <span class="seg"><span class="st">晚上</span>返 JFK</span></td>
-          <td>JFK 附近</td></tr>
-      <tr><td class="dm">8/18 <span class="dw">二</span></td>
-          <td><span class="seg"><span class="st">上午</span><span class="tag flight">✈️ AA149</span> JFK 11:00 → SFO 14:25</span>
-              <span class="seg"><span class="st">下午</span>CH 接机</span></td>
-          <td>CH 家 ✅</td></tr>
-      <tr><td class="dm">8/19 <span class="dw">三</span></td>
-          <td><span class="seg"><span class="st">上午</span>空</span>
-              <span class="seg"><span class="st">下午</span>空</span>
-              <span class="seg"><span class="st">晚上</span><span class="tag party">🏠 WADE 家聚会</span> 南湾</span></td>
-          <td>湾区酒店</td></tr>
-      <tr><td class="dm">8/20 <span class="dw">四</span></td>
-          <td><span class="seg"><span class="st">上午</span><span class="tag meet">💼 Decagon</span> SF 市区</span>
-              <span class="seg"><span class="st">下午</span><span class="tag meet">💼 Cresta</span> SF 市区</span>
-              <span class="seg"><span class="st">晚上</span><span class="tag party">🍽 Cresta 晚餐</span></span></td>
-          <td>湾区酒店</td></tr>
-      <tr><td class="dm">8/21 <span class="dw">五</span></td>
-          <td><span class="seg"><span class="st">上午</span>空</span>
-              <span class="seg"><span class="st">下午</span>空</span>
-              <span class="seg"><span class="st">晚上</span><span class="tag party">🏠 Benny 家聚会</span> 南湾</span></td>
-          <td>湾区酒店</td></tr>
-      <tr><td class="dm">8/22 <span class="dw">六</span></td>
-          <td><span class="seg"><span class="st">上午</span>空</span><span class="seg"><span class="st">下午</span>空</span><span class="seg"><span class="st">晚上</span>空</span></td>
-          <td>湾区酒店</td></tr>
-      <tr><td class="dm">8/23 <span class="dw">日</span></td>
-          <td><span class="seg"><span class="st">上午</span>空</span><span class="seg"><span class="st">下午</span>空</span><span class="seg"><span class="st">晚上</span>空</span></td>
-          <td>湾区酒店</td></tr>
-      <tr><td class="dm">8/24 <span class="dw">一</span></td>
-          <td><span class="seg"><span class="st">上午</span><span class="tag flight">✈️ SFO → PVG</span> 8/25 抵达</span></td>
-          <td>—</td></tr>
-    </tbody>
-  </table>
+  <div class="legend">
+    <span class="tag meet">💼 拜访</span>
+    <span class="tag dinner">🍽 聚餐</span>
+    <span class="tag party">🏠 家聚会</span>
+    <span class="tag flight">✈️ 航班</span>
+  </div>
+
+  <div class="day today">
+    <div class="dl"><div class="n">8/16</div><div class="w">周日</div><div class="h">🏨 Arlo Midtown <span class="ok">✅</span></div></div>
+    <div class="slots">
+      <div class="slot"><span class="sl">上午</span><span class="tag flight">✈️ MU587</span> 上海 11:30 起飞</div>
+      <div class="slot"><span class="sl">下午</span>14:25 抵 JFK，CY 接机，入纽约市区</div>
+      <div class="slot"><span class="sl">晚上</span>Hudson Yards / High Line / Times Square</div>
+    </div>
+  </div>
+
+  <div class="wk">8/17 – 8/23</div>
+
+  <div class="day">
+    <div class="dl"><div class="n">8/17</div><div class="w">周一</div><div class="h">🏨 JFK 附近</div></div>
+    <div class="slots">
+      <div class="slot"><span class="sl">上午</span>Bryant Park / 图书馆 / 第五大道
+        <span class="noon"><b>中午</b>回酒店取行李，与 CY 午餐</span></div>
+      <div class="slot"><span class="sl">下午</span>13:30 赴石溪访校</div>
+      <div class="slot"><span class="sl">晚上</span>返 JFK</div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="dl"><div class="n">8/18</div><div class="w">周二</div><div class="h">🏨 CH 家 <span class="ok">✅</span></div></div>
+    <div class="slots">
+      <div class="slot"><span class="sl">上午</span><span class="tag flight">✈️ AA149</span> JFK 11:00 → SFO 14:25</div>
+      <div class="slot"><span class="sl">下午</span>CH 接机</div>
+      <div class="slot empty"><span class="sl">晚上</span>空</div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="dl"><div class="n">8/19</div><div class="w">周三</div><div class="h">🏨 湾区酒店</div></div>
+    <div class="slots">
+      <div class="slot empty"><span class="sl">上午</span>空</div>
+      <div class="slot empty"><span class="sl">下午</span>空</div>
+      <div class="slot"><span class="sl">晚上</span><span class="tag party">🏠 WADE 家聚会</span> 南湾</div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="dl"><div class="n">8/20</div><div class="w">周四</div><div class="h">🏨 湾区酒店</div></div>
+    <div class="slots">
+      <div class="slot"><span class="sl">上午</span><span class="tag meet">💼 Decagon</span> SF 市区</div>
+      <div class="slot"><span class="sl">下午</span><span class="tag meet">💼 Cresta</span> SF 市区</div>
+      <div class="slot"><span class="sl">晚上</span><span class="tag dinner">🍽 Cresta 晚餐</span></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="dl"><div class="n">8/21</div><div class="w">周五</div><div class="h">🏨 湾区酒店</div></div>
+    <div class="slots">
+      <div class="slot empty"><span class="sl">上午</span>空</div>
+      <div class="slot empty"><span class="sl">下午</span>空</div>
+      <div class="slot"><span class="sl">晚上</span><span class="tag party">🏠 Benny 家聚会</span> 南湾</div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="dl"><div class="n">8/22</div><div class="w">周六</div><div class="h">🏨 湾区酒店</div></div>
+    <div class="slots">
+      <div class="slot empty"><span class="sl">上午</span>空</div>
+      <div class="slot empty"><span class="sl">下午</span>空</div>
+      <div class="slot empty"><span class="sl">晚上</span>空</div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="dl"><div class="n">8/23</div><div class="w">周日</div><div class="h">🏨 湾区酒店</div></div>
+    <div class="slots">
+      <div class="slot empty"><span class="sl">上午</span>空</div>
+      <div class="slot empty"><span class="sl">下午</span>空</div>
+      <div class="slot empty"><span class="sl">晚上</span>空</div>
+    </div>
+  </div>
+
+  <div class="wk">8/24 –</div>
+
+  <div class="day">
+    <div class="dl"><div class="n">8/24</div><div class="w">周一</div></div>
+    <div class="slots">
+      <div class="slot"><span class="sl">上午</span><span class="tag flight">✈️ SFO → PVG</span> 8/25 抵达</div>
+      <div class="slot empty"><span class="sl">下午</span>空</div>
+      <div class="slot empty"><span class="sl">晚上</span>空</div>
+    </div>
+  </div>
 </div>
 
 <!-- 详细 -->
@@ -279,106 +322,11 @@
 
 </div>
 
-<!-- 日程 -->
-<div id="m3" class="hide">
-  <div class="legend">
-    <span class="tag meet">💼 拜访</span>
-    <span class="tag dinner">🍽 聚餐</span>
-    <span class="tag party">🏠 家聚会</span>
-    <span class="tag flight">✈️ 航班</span>
-  </div>
-
-  <div class="day today">
-    <div class="dl"><div class="n">8/16</div><div class="w">周日</div></div>
-    <div class="slots">
-      <div class="slot"><span class="sl">上午</span><span class="tag flight">✈️ MU587 赴美</span></div>
-      <div class="slot"><span class="sl">下午</span>抵 JFK，入纽约市区</div>
-      <div class="slot"><span class="sl">晚上</span>Hudson Yards / Times Square</div>
-    </div>
-  </div>
-
-  <div class="wk">8/17 – 8/23</div>
-
-  <div class="day">
-    <div class="dl"><div class="n">8/17</div><div class="w">周一</div></div>
-    <div class="slots">
-      <div class="slot"><span class="sl">上午</span>Bryant Park / 第五大道</div>
-      <div class="slot"><span class="sl">下午</span>石溪访校</div>
-      <div class="slot"><span class="sl">晚上</span>返 JFK</div>
-    </div>
-  </div>
-
-  <div class="day">
-    <div class="dl"><div class="n">8/18</div><div class="w">周二</div></div>
-    <div class="slots">
-      <div class="slot"><span class="sl">上午</span><span class="tag flight">✈️ AA149 赴湾区</span></div>
-      <div class="slot"><span class="sl">下午</span>CH 接机</div>
-      <div class="slot empty"><span class="sl">晚上</span>空</div>
-    </div>
-  </div>
-
-  <div class="day">
-    <div class="dl"><div class="n">8/19</div><div class="w">周三</div></div>
-    <div class="slots">
-      <div class="slot empty"><span class="sl">上午</span>空</div>
-      <div class="slot empty"><span class="sl">下午</span>空</div>
-      <div class="slot"><span class="sl">晚上</span><span class="tag party">🏠 WADE 家聚会</span> 南湾</div>
-    </div>
-  </div>
-
-  <div class="day">
-    <div class="dl"><div class="n">8/20</div><div class="w">周四</div></div>
-    <div class="slots">
-      <div class="slot"><span class="sl">上午</span><span class="tag meet">💼 Decagon</span> SF</div>
-      <div class="slot"><span class="sl">下午</span><span class="tag meet">💼 Cresta</span> SF</div>
-      <div class="slot"><span class="sl">晚上</span><span class="tag dinner">🍽 Cresta 晚餐</span></div>
-    </div>
-  </div>
-
-  <div class="day">
-    <div class="dl"><div class="n">8/21</div><div class="w">周五</div></div>
-    <div class="slots">
-      <div class="slot empty"><span class="sl">上午</span>空</div>
-      <div class="slot empty"><span class="sl">下午</span>空</div>
-      <div class="slot"><span class="sl">晚上</span><span class="tag party">🏠 Benny 家聚会</span> 南湾</div>
-    </div>
-  </div>
-
-  <div class="day">
-    <div class="dl"><div class="n">8/22</div><div class="w">周六</div></div>
-    <div class="slots">
-      <div class="slot empty"><span class="sl">上午</span>空</div>
-      <div class="slot empty"><span class="sl">下午</span>空</div>
-      <div class="slot empty"><span class="sl">晚上</span>空</div>
-    </div>
-  </div>
-
-  <div class="day">
-    <div class="dl"><div class="n">8/23</div><div class="w">周日</div></div>
-    <div class="slots">
-      <div class="slot empty"><span class="sl">上午</span>空</div>
-      <div class="slot empty"><span class="sl">下午</span>空</div>
-      <div class="slot empty"><span class="sl">晚上</span>空</div>
-    </div>
-  </div>
-
-  <div class="wk">8/24 –</div>
-
-  <div class="day">
-    <div class="dl"><div class="n">8/24</div><div class="w">周一</div></div>
-    <div class="slots">
-      <div class="slot"><span class="sl">上午</span><span class="tag flight">✈️ SFO → PVG</span> 8/25 抵达</div>
-      <div class="slot empty"><span class="sl">下午</span>空</div>
-      <div class="slot empty"><span class="sl">晚上</span>空</div>
-    </div>
-  </div>
-</div>
-
 <footer>2026-08 美国行程 · 9 天 8 晚</footer>
 
 <script>
 function s(n){
-  for(var i=1;i<=3;i++){
+  for(var i=1;i<=2;i++){
     document.getElementById('m'+i).classList.toggle('hide',i!==n);
     document.getElementById('b'+i).classList.toggle('active',i===n);
   }
