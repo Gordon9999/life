@@ -31,7 +31,7 @@
 ## 8/18 周二 · JFK → SFO
 - 11:00 AA149 JFK T8 → SFO T1，14:25 抵达（约 6.5 小时，A321；提前 2 小时到机场，9:00 前 T8）
 - CH 在 SFO 接机（已确认）
-- 入住 The Westin Palo Alto（675 El Camino Real, Palo Alto；Two Double Room 2 张大床，可住 4 人；8/18 15:00 后入住，8/25 12:00 前退房，共 7 晚；已预付 $4,915.73；确认号 1762355257 / PIN 5140；8/17 23:59 前可免费取消，之后不可退）
+- 入住 The Westin Palo Alto（675 El Camino Real, Palo Alto；Two Double Room 2 张大床，可住 4 人；8/18 15:00 后入住，8/25 12:00 前退房，共 7 晚；已预付 $4,915.73；确认号 1762355257；8/17 23:59 前可免费取消，之后不可退）
 
 ## 8/19 周三 · 南湾（住 Westin Palo Alto）
 - 晚上 WADE 聚会，南湾（时间/地址待确认）
