@@ -37,10 +37,10 @@
 - 晚上 WADE 聚会，南湾（时间/地址待确认）
 
 ## 8/20 周四 · Decagon + Cresta
-- 上午 Decagon，SF 市区（时间/地址待确认）
+- 上午 9:30 Decagon @ 100 1st Street, Suite 400, San Francisco, CA 94105（Host: David Levine；需提前注册）
 - 下午 3:00–5:00 Cresta @ 332 Pine St Suite 600, San Francisco, CA 94104（线下 + Zoom；邀请写 6:00 PM–8:00 PM EDT；Zoom ID 89483299768 / passcode 814142）
 - 晚上与 Cresta 团队晚餐（会议时段可能含晚餐，现场确认）
-- 当天注意 SF ↔ 湾区转场时间
+- 当天注意 SF ↔ 湾区转场时间：Palo Alto → SF 早高峰预留 1–1.5 小时
 
 ## 8/21 周五 · 南湾
 - 晚上 Benny 聚会，南湾（时间/地址待确认）
@@ -60,5 +60,5 @@
 ## 待确认清单
 1. 8/17 石溪具体安排（当晚已订 Marriott JFK）
 2. WADE 聚会（8/19 晚）、Benny 聚会（8/21 晚）的时间与地址（均在南湾）
-3. Decagon（8/20 上午）的时间与地址；SIHUI 暂未排期；Cresta 已确认 6–8 PM EDT @ 332 Pine St Suite 600, SF
+3. SIHUI 暂未排期；Decagon、Cresta 均已确认
 4. 8/16 原计划 8/18 住 CH 家（West San Jose）已改为 Westin Palo Alto，与 CH 同步住宿变化
