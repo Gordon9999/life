@@ -33,7 +33,9 @@
 - CH 在 SFO 接机（已确认）
 - 入住 The Westin Palo Alto（675 El Camino Real, Palo Alto；Two Double Room 2 张大床，可住 4 人；8/18 15:00 后入住，8/24 12:00 前退房，共 6 晚；原按 7 晚预付 $4,915.73，改 6 晚后以酒店调整为准；确认号 1762355257）
 
-## 8/19 周三 · 南湾（住 Westin Palo Alto）
+## 8/19 周三 · Simon 拜访 + WADE 聚会（住 Westin Palo Alto）
+- 上午拜访 Simon @ 靖亚（Jingya）湾区 office（House 据点，地址待补），聊完一起回酒店
+- 白天顺路取行李（行李在同学 CH 家，时间灵活：可聊完 Simon 后去取）
 - 晚上 WADE 聚会，南湾（时间/地址待确认）
 
 ## 8/20 周四 · Decagon + Cresta
@@ -42,11 +44,12 @@
 - 晚上与 Cresta 团队晚餐（会议时段可能含晚餐，现场确认）
 - 当天注意 SF ↔ 湾区转场时间：Palo Alto → SF 早高峰预留 1–1.5 小时
 
-## 8/21 周五 · 南湾
+## 8/21 周五 · Sierra 拜访 + Benny 聚会
+- 上午拜访 Sierra（时间/地址待确认）
 - 晚上 Benny 聚会，南湾（时间/地址待确认）
 
-## 8/22 周六（住 Westin Palo Alto）
-- （空）
+## 8/22 周六 · Fred 家聚会（住 Westin Palo Alto）
+- 下午 Fred 家聚会（地址待确认）
 
 ## 8/23 周日（住 Westin Palo Alto）
 - （空，暂不安排旅游行程）
@@ -58,7 +61,9 @@
 - 8/24 上午约 8:00 前从 Westin 退房出发去 SFO（酒店已确认改为 8/24 退房，无滞留晚）
 
 ## 待确认清单
-1. 8/17 石溪具体安排（当晚已订 Marriott JFK）
-2. WADE 聚会（8/19 晚）、Benny 聚会（8/21 晚）的时间与地址（均在南湾）
-3. SIHUI 暂未排期；Decagon、Cresta 均已确认
-4. 8/16 原计划 8/18 住 CH 家（West San Jose）已改为 Westin Palo Alto，与 CH 同步住宿变化
+1. WADE 聚会（8/19 晚）、Benny 聚会（8/21 晚）的时间与地址（均在南湾）
+2. Simon 拜访（8/19 上午）靖亚 office 地址
+3. Sierra 拜访（8/21 上午）时间与地址
+4. Fred 家聚会（8/22 下午）地址
+5. SIHUI 暂未排期；Decagon、Cresta 均已确认
+6. 8/16 原计划 8/18 住 CH 家（West San Jose）已改为 Westin Palo Alto，与 CH 同步住宿变化
