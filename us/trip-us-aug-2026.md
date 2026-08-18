@@ -29,7 +29,7 @@
 - 晚上返回 JFK，住 Marriott New York JFK Airport（135-25 142nd St, Jamaica，确认号 91828335）
 
 ## 8/18 周二 · JFK → SFO
-- 11:00 AA149 JFK T8 → SFO T1，14:25 抵达（约 6.5 小时，A321；提前 2 小时到机场，9:00 前 T8）
+- 11:00 AA149 JFK T8 → SFO T1，14:25 抵达（约 6.5 小时，A321；登机口 Gate 8，座位 9D，Flagship Business 商务舱；票号 0019441661003；boarding 10:25，10:00 前到 T8 即可）
 - CH 在 SFO 接机（已确认）
 - 入住 The Westin Palo Alto（675 El Camino Real, Palo Alto；Two Double Room 2 张大床，可住 4 人；8/18 15:00 后入住，8/24 12:00 前退房，共 6 晚；原按 7 晚预付 $4,915.73，改 6 晚后以酒店调整为准；确认号 1762355257）
 
