@@ -44,8 +44,9 @@
 - 晚上与 Cresta 团队晚餐（会议时段可能含晚餐，现场确认）
 - 当天注意 SF ↔ 湾区转场时间：Palo Alto → SF 早高峰预留 1–1.5 小时
 
-## 8/21 周五 · Sierra 拜访 + Benny 聚会
+## 8/21 周五 · Sierra 拜访 + SIHUI + Benny 聚会
 - 上午 10:00–12:00 Sierra @ 235 2nd St, San Francisco, CA 94105（邀请写 1:00 PM–3:00 PM EDT；邀请人 Kevin Zhang；Zoom ID 83909938198；当前状态 HOLD，待最终确认）
+- 下午 SIHUI（SF 市区，时间/地点待确认）
 - 晚上 Benny 聚会，南湾（时间/地址待确认）
 
 ## 8/22 周六 · Fred 家聚会（住 Westin Palo Alto）
@@ -65,5 +66,5 @@
 2. Simon 拜访（8/19 上午）靖亚 office 地址
 3. Sierra 拜访（8/21 上午）已暂定 10:00–12:00 @ 235 2nd St, SF（HOLD，待最终确认）
 4. Fred 家聚会（8/22 下午）地址
-5. SIHUI 暂未排期；Decagon、Cresta 均已确认
+5. SIHUI（8/21 下午）已排期，时间/地点待确认；Decagon、Cresta 均已确认
 6. 8/16 原计划 8/18 住 CH 家（West San Jose）已改为 Westin Palo Alto，与 CH 同步住宿变化
