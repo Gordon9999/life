@@ -9,7 +9,7 @@
 |---|---|---|---|
 | CY（同行） | 8/16–8/17 | 纽约市区 / 石溪 / JFK | 已确认 |
 | CH | 8/18 接机 | SFO | 已确认 |
-| WADE | 8/19 晚上 | 南湾（聚会） | 待确认细节 |
+| Decagon | 8/20 上午 | SF 市区 | 已确认 |
 | Decagon | 8/20 上午 | SF 市区 | 时间/地址待确认 |
 | Cresta | 8/20 下午 + 晚餐 | SF 市区（下午会面 + 晚上晚餐） | 时间/地址待确认 |
 | SIHUI | — | SF 市区 | 暂未排期 |
@@ -33,10 +33,9 @@
 - CH 在 SFO 接机（已确认）
 - 入住 The Westin Palo Alto（675 El Camino Real, Palo Alto；Two Double Room 2 张大床，可住 4 人；8/18 15:00 后入住，8/24 12:00 前退房，共 6 晚；原按 7 晚预付 $4,915.73，改 6 晚后以酒店调整为准；确认号 1762355257）
 
-## 8/19 周三 · Simon 拜访 + WADE 聚会（住 Westin Palo Alto）
+## 8/19 周三 · Simon 拜访（住 Westin Palo Alto）
 - 上午拜访 Simon @ 靖亚（Jingya）湾区 office（House 据点，地址待补），聊完一起回酒店
 - 白天顺路取行李（行李在同学 CH 家，时间灵活：可聊完 Simon 后去取）
-- 晚上 WADE 聚会，南湾（时间/地址待确认）
 
 ## 8/20 周四 · Decagon + Cresta
 - 上午 9:30 Decagon @ 100 1st Street, Suite 400, San Francisco, CA 94105（Host: David Levine；需提前注册）
@@ -62,7 +61,7 @@
 - 8/24 上午约 8:00 前从 Westin 退房出发去 SFO（酒店已确认改为 8/24 退房，无滞留晚）
 
 ## 待确认清单
-1. WADE 聚会（8/19 晚）、Benny 聚会（8/21 晚）的时间与地址（均在南湾）
+1. Benny 聚会（8/21 晚）的时间与地址（南湾）
 2. Simon 拜访（8/19 上午）靖亚 office 地址
 3. Sierra 拜访（8/21 上午）已暂定 10:00–12:00 @ 235 2nd St, SF（HOLD，待最终确认）
 4. Fred 家聚会（8/22 下午）地址
