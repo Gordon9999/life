@@ -1,7 +1,7 @@
 # 2026 年 8 月美国行程（8/16–8/24，9 天 8 晚）
 
 上海 → 纽约 → 石溪/JFK → 旧金山湾区 → 上海
-纽约 1 晚 · JFK 1 晚 · 帕洛阿尔托 Westin 6 晚（8/18–8/24）
+纽约 1 晚 · JFK 1 晚 · 帕洛阿尔托 Westin 5 晚（8/18、8/20–8/24）+ SF 1 晚（8/19，地址待补）
 
 ## 拜访/会面清单
 
@@ -31,9 +31,9 @@
 ## 8/18 周二 · JFK → SFO
 - 11:00 AA149 JFK T8 → SFO T1，14:25 抵达（约 6.5 小时，A321；登机口 Gate 8，座位 9D，Flagship Business 商务舱；票号 0019441661003；boarding 10:25，10:00 前到 T8 即可）
 - CH 在 SFO 接机（已确认）
-- 入住 The Westin Palo Alto（675 El Camino Real, Palo Alto；Two Double Room 2 张大床，可住 4 人；8/18 15:00 后入住，8/24 12:00 前退房，共 6 晚；原按 7 晚预付 $4,915.73，改 6 晚后以酒店调整为准；确认号 1762355257）
+- 入住 The Westin Palo Alto（675 El Camino Real, Palo Alto；Two Double Room 2 张大床，可住 4 人；8/18 15:00 后入住，8/24 12:00 前退房，实际住 5 晚（8/19 挪去 SF 住一晚，不计入 Westin）；原按 7 晚预付 $4,915.73，累计调整以酒店为准；确认号 1762355257）
 
-## 8/19 周三 · Simon 拜访（住 Westin Palo Alto）
+## 8/19 周三 · Simon 拜访（住 SF，地址待补）
 - 上午拜访 Simon @ 靖亚（Jingya）湾区 office（House 据点，地址待补），聊完一起回酒店
 - 白天顺路取行李（行李在同学 CH 家，时间灵活：可聊完 Simon 后去取）
 
@@ -68,3 +68,4 @@
 4. Fred 家聚会（8/22 下午）地址
 5. SIHUI（8/21 中午）午餐，时间/地点待确认；Decagon、Cresta 均已确认
 6. 8/16 原计划 8/18 住 CH 家（West San Jose）已改为 Westin Palo Alto，与 CH 同步住宿变化
+7. 8/19 晚 SF 住宿地址待补；Westin 累计晚数 7→5（8/19 挪出），差价以酒店调整为准
